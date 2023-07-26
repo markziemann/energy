@@ -7,8 +7,8 @@ output:
     toc: true
     toc_float: true
     code_folding: hide
-    fig_width: 7
-    fig_height: 7
+    fig_width: 4
+    fig_height: 4
 theme: cosmo
 ---
 
@@ -82,13 +82,19 @@ a whole year.
 While power consumption from computational research could be an environmental concern, it is important
 to put it in context.
 
-If researcher A uses one server at 50% CPU load, and works remotely, they will expend 1,753 kWh/yr.
+If researcher A uses one server at 50% CPU load, and works remotely, they will expend approx 1,753 kWh/yr.
 
-If reseracher B uses one server and commutes 150 days er year by car, that is 9,253 kWh/yr.
+If researcher B uses one server and commutes 150 days er year by car, that is 9,253 kWh/yr.
 
-If researcher C uses one server and makes two intercontinental return flights annually, they will
-use 108,00 kWh.
+If researcher C uses one server, commutes 150 days per year and makes two intercontinental return
+flights annually, they will use 115,653 kWh.
 
+```{r,bars,fig.cap = "Annual energy consumption for 3 researchers. A: Remote worker with 1 server. B: Commuter with mid-size car with 1 server. C: Commuter with mid-size car with 1 server and two intercontinental flights for conferences."}
+
+x <- c("A"= 1753,"B" = 9253, "C" = 115653)
+barplot(x,ylab="Annual energy use (kWh/yr)")
+
+```
 Therefore, for typical workloads involving five servers or less, an individual's travel behaviour is
 a much greater consideration than the energy cost of computing.
 
